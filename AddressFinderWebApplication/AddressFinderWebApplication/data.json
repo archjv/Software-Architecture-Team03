@@ -1,0 +1,121 @@
+{
+  "UserAddressesCanada": [
+    {
+      "Name": "John Smith",
+      "AddressLine1": "123 Main St",
+      "AddressLine2": "Apt 2",
+      "Province": "Ontario",
+      "City": "Toronto",
+      "PostalCode": "M1H 1H1",
+      "Country": "CANADA"
+    },
+    {
+      "Name": "Jane Doe",
+      "AddressLine1": "456 Queen St",
+      "AddressLine2": "",
+      "Province": "British Columbia",
+      "City": "Vancouver",
+      "PostalCode": "V6C 1A5",
+      "Country": "CANADA"
+    }
+  ],
+  "UserAddressesMexico": [
+    {
+      "Name": "Juan Perez",
+      "StreetTypeAndName": "Calle 1",
+      "HouseNumber": "123",
+      "NeighborhoodQuarterSettlement": "Col. Centro",
+      "Municipality": "Mexico City",
+      "PostalCode": "06060",
+      "City": "Mexico City",
+      "State": "CDMX",
+      "Country": "MEXICO"
+    },
+    {
+      "Name": "Maria Hernandez",
+      "StreetTypeAndName": "Avenida 2",
+      "HouseNumber": "456",
+      "NeighborhoodQuarterSettlement": "Col. Del Valle",
+      "Municipality": "Mexico City",
+      "PostalCode": "03100",
+      "City": "Mexico City",
+      "State": "CDMX",
+      "Country": "MEXICO"
+    }
+  ],
+  "UserAddressesAustralia": [
+    {
+      "Name": "Maddy",
+      "Address1": "123 Main St",
+      "Address2": "",
+      "Province": "New South Wales",
+      "City": "Sydney",
+      "Postcode": "2000",
+      "Country": "AUSTRALIA"
+    },
+    {
+      "Name": "Sandy",
+      "Address1": "456 George St",
+      "Address2": "Level 5",
+      "Province": "Victoria",
+      "City": "Melbourne",
+      "Postcode": "3000",
+      "Country": "AUSTRALIA"
+    }
+  ],
+  "UserAddressesIndia": [
+    {
+      "Name": "Henish",
+      "Address1": "123 Main St",
+      "Address2": "",
+      "Landmark": "Near Bata Chowk",
+      "City": "Gurugram",
+      "District": "Gurugram",
+      "Pincode": "122001",
+      "State": "Haryana",
+      "Country": "INDIA"
+    },
+    {
+      "Name": "Mujadid",
+      "Address1": "456 M.G. Road",
+      "Address2": "Suite 201",
+      "Landmark": "Near Metro Station",
+      "City": "Mumbai",
+      "District": "Pune",
+      "Pincode": "400001",
+      "State": "Maharashtra",
+      "Country": "INDIA"
+    },
+    {
+      "Name": "Mujtaba",
+      "Address1": "54 danish villa",
+      "Address2": "Kausar baugh",
+      "Landmark": "Near Kings bakery",
+      "City": "Pune",
+      "District": "pune",
+      "Pincode": "411048",
+      "State": "MH",
+      "Country": "INDIA"
+    }
+  ],
+  "UserAddressesUsa": [
+    {
+      "f1name1": "John Smith",
+      "f1address1": "123 Main St",
+      "f1address2": "Apt 2",
+      "f1city": "New York",
+      "f1zipcode": "10001",
+      "State": "New York",
+      "f1country": "USA"
+    },
+    {
+      "f1name1": "Archana",
+      "f1address1": "728",
+      "f1address2": "12th avenue",
+      "f1city": "seattle",
+      "f1zipcode": "98122",
+      "State": "WA",
+      "f1country": "USA"
+    }
+  ]
+}
