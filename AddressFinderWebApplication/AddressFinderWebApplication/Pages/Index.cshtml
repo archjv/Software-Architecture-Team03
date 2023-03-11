@@ -10,8 +10,6 @@
     @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
 </div>
 
-
-
 <style>
     body {
         /* Background Image*/
@@ -22,9 +20,20 @@
     }
 </style>
 
+<div class="search">
+    <form method="get" class="search-form">
+        <input class="form-control valid" asp-for="SearchString" placeholder="Type here to search series" />
+        <button type="submit">Filter</button>
+    </form>
+    <form method="get" class="reset-form">
+        <button type="submit">Clear</button>
+    </form>
+</div>
+
+
 <label for="dropdown">Select an Option:</label>
 <select id="myDropdown">
-    <option value="form1">Select Country</option>
+    <option value="form">Select Country</option>
     <option value="form1">USA</option>
     <option value="form2">INDIA</option>
     <option value="form3">AUSTRALIA</option>
@@ -42,110 +51,121 @@
         const selectedForm = event.target.value;
         if (selectedForm === "form1") {
             formContainer.innerHTML = `
-                        <form>
+                            <form method="get">
+                              <br><br>
+                              <label for="f1name1">Name:</label>
+                                  <input type="text" id="f1name1" name="f1name1"><br><br>
+                              <label for="address1">Address Line 1:</label>
+                              <input type="text" id="f1address1" name="f1address1"><br><br>
+                              <label for="address2">Address Line 2:</label>
+                              <input type="text" id="f1address2" name="f1address2"><br><br>
+                              <label for="province">Province:</label>
+                              <input type="text" id="f1province" name="f1province"><br><br>
+                              <label for="city">City:</label>
+                              <input type="text" id="f1city" name="f1city"><br><br>
+                              <label for="zipcode">ZIP Code:</label>
+                              <input type="text" id="f1zipcode" name="f1zipcode"><br><br>
+                              <label for="country">Country:</label>
+                              <input type="text" id="f1country" value="USA" disabled name="f1country"><br><br>
+                              <input type="submit" value="Submit">
+                            </form>
+                          `;
+        }
+
+        else if (selectedForm === "form2") {
+            formContainer.innerHTML = `
+                                    <form id="myform2" method="get">
+                                  <br><br>
+                                  <label for="f2name1">Name:</label>
+                                  <input type="text" id="f2name1" name="f2name1"><br><br>
+                                  <label for="address1">Address Line 1:</label>
+                                  <input type="text" id="f2address1" name="f2address1"><br><br>
+                                  <label for="address2">Address Line 2:</label>
+                                  <input type="text" id="f2address2" name="f2address2"><br><br>
+                                  <label for="landmark">Landmark:</label>
+                                  <input type="text" id="f2landmark" name="f2landmark"><br><br>
+                                  <label for="province">Province:</label>
+                                  <input type="text" id="f2province" name="f2province"><br><br>
+                                  <label for="city">City:</label>
+                                  <input type="text" id="f2city" name="f2city"><br><br>
+                                  <label for="pincode">Pin Code:</label>
+                                  <input type="text" id="f2pincode" name="f2pincode"><br><br>
+                                  <label for="country">Country:</label>
+                                  <input type="text" id="f1country" value="INDIA" disabled name="f2country"><br><br>
+                                  <input type="submit" value="Submit">
+                                </form>
+                              `;
+        }
+        else if (selectedForm === "form3") {
+            formContainer.innerHTML = `
+                                        <form id="myform3" method="get">
+                                      <br><br>
+                                      <label for="name1">Name:</label>
+                                      <input type="text" id="f3name1" name="f3name1"><br><br>
+                                      <label for="address1">Address Line 1:</label>
+                                      <input type="text" id="f3address1" name="f3address1"><br><br>
+                                      <label for="address2">Address Line 2:</label>
+                                      <input type="text" id="f3address2" name="f3address2"><br><br>
+                                      <label for="province">Province:</label>
+                                      <input type="text" id="f3province" name="f3province"><br><br>
+                                      <label for="city">City:</label>
+                                      <input type="text" id="f3city" name="f3city"><br><br>
+                                      <label for="postcode">Post Code:</label>
+                                      <input type="text" id="f3postcode" name="f3postcode"><br><br>
+                                  <label for="country">Country:</label>
+                                  <input type="text" id="f1country" value="AUSTRALIA" disabled name="f3country"><br><br>
+                                      <input type="submit" value="Submit">
+                                    </form>
+                                  `;
+        }
+        else if (selectedForm === "form4") {
+            formContainer.innerHTML = `
+                            <form id="myform4" method="get">
                           <br><br>
                           <label for="name1">Name:</label>
-                          <input type="text" id="name1" name="name1"><br><br>
-                          <label for="address1">Address Line 1:</label>
-                          <input type="text" id="address1" name="address1"><br><br>
-                          <label for="address2">Address Line 2:</label>
-                          <input type="text" id="address2" name="address2"><br><br>
-                          <label for="province">Province:</label>
-                          <input type="text" id="province" name="province"><br><br>
+                          <input type="text" id="f4name1" name="f4name1"><br><br>
+                          <label for="stsn">Street Type and Street Name:</label>
+                          <input type="text" id="f4stsn" name="f4stsn"><br><br>
+                          <label for="hno">House No:</label>
+                          <input type="text" id="f4hno" name="f4hno"><br><br>
+                          <label for="nqs">Neighborhood , Quarter, or Settlement:</label>
+                          <input type="text" id="f4nqs" name="f4nqs"><br><br>
+                          <label for="muncipality">Muncipality:</label>
+                          <input type="text" id="f4muncipality" name="f4muncipality"><br><br>
+                          <label for="postalcode">Postal Code:</label>
+                          <input type="text" id="f4postalcode" name="f4postalcode"><br><br>
                           <label for="city">City:</label>
-                          <input type="text" id="city" name="city"><br><br>
-                          <label for="zipcode">ZIP Code:</label>
-                          <input type="text" id="zipcode" name="zipcode"><br><br>
+                          <input type="text" id="f4city" name="f4city"><br><br>
+                          <label for="state">State:</label>
+                          <input type="text" id="f4state" name="f4state"><br><br>
+                                  <label for="country">Country:</label>
+                                  <input type="text" id="f1country" value="MEXICO" disabled name="f4country"><br><br>
                           <input type="submit" value="Submit">
                         </form>
                       `;
         }
-        else if (selectedForm === "form2") {
-            formContainer.innerHTML = `
-                            <form>
-                              <br><br>
-                              <label for="name1">Name:</label>
-                              <input type="text" id="name1" name="name1"><br><br>
-                              <label for="address1">Address Line 1:</label>
-                              <input type="text" id="address1" name="address1"><br><br>
-                              <label for="address2">Address Line 2:</label>
-                              <input type="text" id="address2" name="address2"><br><br>
-                              <label for="landmark">Landmark:</label>
-                              <input type="text" id="landmark" name="landmark"><br><br>
-                              <label for="province">Province:</label>
-                              <input type="text" id="province" name="province"><br><br>
-                              <label for="city">City:</label>
-                              <input type="text" id="city" name="city"><br><br>
-                              <label for="pincode">Pin Code:</label>
-                              <input type="text" id="pincode" name="pincode"><br><br>
-                              <input type="submit" value="Submit">
-                            </form>
-                          `;
-        } 
-        else if (selectedForm === "form3") {
-            formContainer.innerHTML = `
-                                <form>
-                                  <br><br>
-                                  <label for="name1">Name:</label>
-                                  <input type="text" id="name1" name="name1"><br><br>
-                                  <label for="address1">Address Line 1:</label>
-                                  <input type="text" id="address1" name="address1"><br><br>
-                                  <label for="address2">Address Line 2:</label>
-                                  <input type="text" id="address2" name="address2"><br><br>
-                                  <label for="province">Province:</label>
-                                  <input type="text" id="province" name="province"><br><br>
-                                  <label for="city">City:</label>
-                                  <input type="text" id="city" name="city"><br><br>
-                                  <label for="postcode">Post Code:</label>
-                                  <input type="text" id="postcode" name="postcode"><br><br>
-                                  <input type="submit" value="Submit">
-                                </form>
-                              `;
-        } 
-        else if (selectedForm === "form4") {
-            formContainer.innerHTML = `
-                    <form>
-                      <br><br>
-                      <label for="name1">Name:</label>
-                      <input type="text" id="name1" name="name1"><br><br>
-                      <label for="stsn">Street Type and Street Name:</label>
-                      <input type="text" id="stsn" name="stsn"><br><br>
-                      <label for="hno">House No:</label>
-                      <input type="text" id="hno" name="hno"><br><br>
-                      <label for="nqs">Neighborhood , Quarter, or Settlement:</label>
-                      <input type="text" id="nqs" name="nqs"><br><br>
-                      <label for="muncipality">Muncipality:</label>
-                      <input type="text" id="muncipality" name="muncipality"><br><br>
-                      <label for="postalcode">Postal Code:</label>
-                      <input type="text" id="postalcode" name="postalcode"><br><br>
-                      <label for="city">City:</label>
-                      <input type="text" id="city" name="city"><br><br>
-                      <label for="state">State:</label>
-                      <input type="text" id="state" name="state"><br><br>
-                      <input type="submit" value="Submit">
-                    </form> 
-                  `;
-        } 
         else if (selectedForm === "form5") {
             formContainer.innerHTML = `
-                    <form>
-                      <br><br>
-                      <label for="name1">Name:</label>
-                      <input type="text" id="name1" name="name1"><br><br>
-                      <label for="address1">Address Line 1:</label>
-                      <input type="text" id="address1" name="address1"><br><br>
-                      <label for="address2">Address Line 2:</label>
-                      <input type="text" id="address2" name="address2"><br><br>
-                      <label for="province">Province:</label>
-                      <input type="text" id="province" name="province"><br><br>
-                      <label for="city">City:</label>
-                      <input type="text" id="city" name="city"><br><br>
-                      <label for="postalcode">Postal Code:</label>
-                      <input type="text" id="postalcode" name="postalcode"><br><br>
-                      <input type="submit" value="Submit">                          
-                    </form> 
-                  `;
-            
+                            <form id="myform5" method="get">
+                          <br><br>
+                          <label for="name1">Name:</label>
+                          <input type="text" id="f5name1" name="f5name1"><br><br>
+                          <label for="address1">Address Line 1:</label>
+                          <input type="text" id="f5address1" name="f5address1"><br><br>
+                          <label for="address2">Address Line 2:</label>
+                          <input type="text" id="f5address2" name="f5address2"><br><br>
+                          <label for="province">Province:</label>
+                          <input type="text" id="f5province" name="f5province"><br><br>
+                          <label for="city">City:</label>
+                          <input type="text" id="f5city" name="f5city"><br><br>
+                          <label for="postalcode">Postal Code:</label>
+                          <input type="text" id="f5postalcode" name="f5postalcode"><br><br>
+                                  <label for="country">Country:</label>
+                                  <input type="text" id="f1country" value="CANADA" disabled name="f5country"><br><br>
+                          <input type="submit" value="Submit">
+                        </form>
+                      `;
+
         }
     });
 </script>
