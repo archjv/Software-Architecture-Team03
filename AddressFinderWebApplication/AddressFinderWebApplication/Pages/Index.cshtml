@@ -1,0 +1,144 @@
+﻿@page
+@using AddressFinderWebApplication.Models
+@model IndexModel
+@{
+    ViewData["ADDRESS FINDER"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">ADDRESS FINDER</h1>
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+</div>
+
+
+
+<label for="dropdown">Select an Option:</label>
+<select id="myDropdown">
+    <option value="form1">USA</option>
+    <option value="form2">INDIA</option>
+    <option value="form3">AUSTRALIA</option>
+    <option value="form4">MEXICO</option>
+    <option value="form5">CANADA</option>
+</select>
+
+<div id="formContainer"></div>
+
+<script>
+    const dropdown = document.getElementById("myDropdown");
+    const formContainer = document.getElementById("formContainer");
+
+    dropdown.addEventListener("change", (event) => {
+        const selectedForm = event.target.value;
+        if (selectedForm === "form1") {
+            formContainer.innerHTML = `
+                        <form>
+                          <br><br>
+                          <label for="name1">Name:</label>
+                          <input type="text" id="name1" name="name1"><br><br>
+                          <label for="address1">Address Line 1:</label>
+                          <input type="text" id="address1" name="address1"><br><br>
+                          <label for="address2">Address Line 2:</label>
+                          <input type="text" id="address2" name="address2"><br><br>
+                          <label for="province">Province:</label>
+                          <input type="text" id="province" name="province"><br><br>
+                          <label for="city">City:</label>
+                          <input type="text" id="city" name="city"><br><br>
+                          <label for="zipcode">ZIP Code:</label>
+                          <input type="text" id="zipcode" name="zipcode"><br><br>
+                          <input type="submit" value="Submit">
+                        </form>
+                      `;
+        }
+        else if (selectedForm === "form2") {
+            formContainer.innerHTML = `
+                            <form>
+                              <br><br>
+                              <label for="name1">Name:</label>
+                              <input type="text" id="name1" name="name1"><br><br>
+                              <label for="address1">Address Line 1:</label>
+                              <input type="text" id="address1" name="address1"><br><br>
+                              <label for="address2">Address Line 2:</label>
+                              <input type="text" id="address2" name="address2"><br><br>
+                              <label for="landmark">Landmark:</label>
+                              <input type="text" id="landmark" name="landmark"><br><br>
+                              <label for="province">Province:</label>
+                              <input type="text" id="province" name="province"><br><br>
+                              <label for="city">City:</label>
+                              <input type="text" id="city" name="city"><br><br>
+                              <label for="pincode">Pin Code:</label>
+                              <input type="text" id="pincode" name="pincode"><br><br>
+                              <input type="submit" value="Submit">
+                            </form>
+                          `;
+        } 
+        else if (selectedForm === "form3") {
+            formContainer.innerHTML = `
+                                <form>
+                                  <br><br>
+                                  <label for="name1">Name:</label>
+                                  <input type="text" id="name1" name="name1"><br><br>
+                                  <label for="address1">Address Line 1:</label>
+                                  <input type="text" id="address1" name="address1"><br><br>
+                                  <label for="address2">Address Line 2:</label>
+                                  <input type="text" id="address2" name="address2"><br><br>
+                                  <label for="province">Province:</label>
+                                  <input type="text" id="province" name="province"><br><br>
+                                  <label for="city">City:</label>
+                                  <input type="text" id="city" name="city"><br><br>
+                                  <label for="postcode">Post Code:</label>
+                                  <input type="text" id="postcode" name="postcode"><br><br>
+                                  <input type="submit" value="Submit">
+                                </form>
+                              `;
+        } 
+        else if (selectedForm === "form4") {
+            formContainer.innerHTML = `
+                    <form>
+                      <br><br>
+                      <label for="name1">Name:</label>
+                      <input type="text" id="name1" name="name1"><br><br>
+                      <label for="stsn">Street Type and Street Name:</label>
+                      <input type="text" id="stsn" name="stsn"><br><br>
+                      <label for="hno">House No:</label>
+                      <input type="text" id="hno" name="hno"><br><br>
+                      <label for="nqs">Neighborhood , Quarter, or Settlement:</label>
+                      <input type="text" id="nqs" name="nqs"><br><br>
+                      <label for="muncipality">Muncipality:</label>
+                      <input type="text" id="muncipality" name="muncipality"><br><br>
+                      <label for="postalcode">Postal Code:</label>
+                      <input type="text" id="postalcode" name="postalcode"><br><br>
+                      <label for="city">City:</label>
+                      <input type="text" id="city" name="city"><br><br>
+                      <label for="state">State:</label>
+                      <input type="text" id="state" name="state"><br><br>
+                      <input type="submit" value="Submit">
+                    </form> 
+                  `;
+        } 
+        else if (selectedForm === "form5") {
+            formContainer.innerHTML = `
+                    <form>
+                      <br><br>
+                      <label for="name1">Name:</label>
+                      <input type="text" id="name1" name="name1"><br><br>
+                      <label for="address1">Address Line 1:</label>
+                      <input type="text" id="address1" name="address1"><br><br>
+                      <label for="address2">Address Line 2:</label>
+                      <input type="text" id="address2" name="address2"><br><br>
+                      <label for="province">Province:</label>
+                      <input type="text" id="province" name="province"><br><br>
+                      <label for="city">City:</label>
+                      <input type="text" id="city" name="city"><br><br>
+                      <label for="postalcode">Postal Code:</label>
+                      <input type="text" id="postalcode" name="postalcode"><br><br>
+                      <input type="submit" value="Submit">                          
+                    </form> 
+                  `;
+            
+        }
+    });
+</script>
+
+
+
+
