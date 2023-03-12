@@ -17,6 +17,24 @@
       "City": "Vancouver",
       "PostalCode": "V6C 1A5",
       "Country": "CANADA"
+    },
+    {
+      "Name": "Khan Mujtaba",
+      "AddressLine1": "54 danish villa",
+      "AddressLine2": "Kausar baugh",
+      "Province": "MH",
+      "City": "Pune",
+      "PostalCode": "411047",
+      "Country": "CANADA"
+    },
+    {
+      "Name": "John Smith",
+      "AddressLine1": "123 Main St",
+      "AddressLine2": "Apt 4",
+      "Province": "Ontario",
+      "City": "Toronto",
+      "PostalCode": "M4C 1B5",
+      "Country": "CANADA"
     }
   ],
   "UserAddressesMexico": [
@@ -41,6 +59,39 @@
       "City": "Mexico City",
       "State": "CDMX",
       "Country": "MEXICO"
+    },
+    {
+      "Name": "Maria Hernandez",
+      "StreetTypeAndName": "Avenida Reforma",
+      "HouseNumber": "506",
+      "NeighborhoodQuarterSettlement": "Juarez",
+      "Municipality": "Cuauhtemoc",
+      "PostalCode": "06600",
+      "City": "Mexico City",
+      "State": "Mexico City",
+      "Country": "MEXICO"
+    },
+    {
+      "Name": "Maria Pillow",
+      "StreetTypeAndName": "Avenida Reforma",
+      "HouseNumber": "506",
+      "NeighborhoodQuarterSettlement": "Juarez",
+      "Municipality": "Cuauhtemoc",
+      "PostalCode": "06600",
+      "City": "Mexico City",
+      "State": "CDMX",
+      "Country": "MEXICO"
+    },
+    {
+      "Name": "Mujtaba",
+      "StreetTypeAndName": "54 danish villa",
+      "HouseNumber": "308",
+      "NeighborhoodQuarterSettlement": "Juarez",
+      "Municipality": "Cuauhtemoc",
+      "PostalCode": "411049",
+      "City": "Mexico City",
+      "State": "CDMX",
+      "Country": "MEXICO"
     }
   ],
   "UserAddressesAustralia": [
@@ -57,6 +108,15 @@
       "Name": "Sandy",
       "Address1": "456 George St",
       "Address2": "Level 5",
+      "Province": "Victoria",
+      "City": "Melbourne",
+      "Postcode": "3000",
+      "Country": "AUSTRALIA"
+    },
+    {
+      "Name": "Mujtaba",
+      "Address1": "728",
+      "Address2": "456 kings St",
       "Province": "Victoria",
       "City": "Melbourne",
       "Postcode": "3000",
@@ -110,6 +170,24 @@
     },
     {
       "f1name1": "Archana",
+      "f1address1": "728",
+      "f1address2": "12th avenue",
+      "f1city": "seattle",
+      "f1zipcode": "98122",
+      "State": "WA",
+      "f1country": "USA"
+    },
+    {
+      "f1name1": "Mujtaba",
+      "f1address1": "54 danish villa",
+      "f1address2": "Kausar baugh",
+      "f1city": "Pune",
+      "f1zipcode": "411048",
+      "State": "Redmond",
+      "f1country": "USA"
+    },
+    {
+      "f1name1": "Yashoda",
       "f1address1": "728",
       "f1address2": "12th avenue",
       "f1city": "seattle",

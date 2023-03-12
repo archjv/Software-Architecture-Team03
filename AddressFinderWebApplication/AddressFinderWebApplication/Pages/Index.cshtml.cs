@@ -22,22 +22,30 @@ namespace AddressFinderWebApplication.Pages
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
 
-        string json = "..."; // JSON string to deserialize
-
         // Deserialize JSON to UserAddresses object
         UserAddresses userAddresses;
 
-        // Serialize UserAddresses object to JSON
-        //string jsonOutput = JsonConvert.SerializeObject(userAddresses);
+        public static UserAddresses results { get; set; }
 
         string jsonString;
-
+        string path;
         public static List<SelectListItem>? Options { get; set; }
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-            jsonString = System.IO.File.ReadAllText(@"C:\Users\archa\source\repos\Software-Architecture-Team03\AddressFinderWebApplication\AddressFinderWebApplication\data.json");
+
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory);
+            string trimmedPath = filePath.Substring(0, filePath.Length - @"bin\Debug\net6.0\".Length);
+            path = Path.Combine(trimmedPath, "data.json");
+            jsonString = System.IO.File.ReadAllText(path);//@"C:\Users\archa\source\repos\Software-Architecture-Team03\AddressFinderWebApplication\AddressFinderWebApplication\data.json");
             userAddresses = JsonConvert.DeserializeObject<UserAddresses>(jsonString);
+
+            results = new UserAddresses();
+            results.UserAddressesAustralia = new List<UserAddressAustralia>();
+            results.UserAddressesCanada = new List<UserAddressCanada>();
+            results.UserAddressesMexico = new List<UserAddressMexico>();
+            results.UserAddressesUsa = new List<UserAddressUsa>();
+            results.UserAddressesIndia = new List<UserAddressIndia>();
         }
 
         public void OnGet()
@@ -50,10 +58,6 @@ namespace AddressFinderWebApplication.Pages
 
             if (name1.Count != 0)
             {
-                var address1 = Request.Query["f1address1"];
-                var address2 = Request.Query["f1address2"];
-                var city = Request.Query["f1city"];
-                var zipcode = Request.Query["f1zipcode"];
                 // Modify the object by adding a new UserAddressUsa object to the UserAddressesUsa list
                 var newAddress = new UserAddressUsa
                 {
@@ -61,7 +65,7 @@ namespace AddressFinderWebApplication.Pages
                     f1address2 = Request.Query["f1address2"],
                     f1city = Request.Query["f1city"],
                     f1zipcode = Request.Query["f1zipcode"],
-                    State = Request.Query["f1state"],
+                    State = Request.Query["state"],
                     f1address1 = Request.Query["f1address1"],
                 };
                 userAddresses.UserAddressesUsa.Add(newAddress);
@@ -69,41 +73,29 @@ namespace AddressFinderWebApplication.Pages
 
             else if (name2.Count != 0)
             {
-                var address1 = Request.Query["f2address1"];
-                var address2 = Request.Query["f2address2"];
-                var province = Request.Query["f2province"];
-                var city = Request.Query["f2city"];
-                var landmark = Request.Query["f2landmark"];
-                var pincode = Request.Query["f2pincode"];
-
                 // Modify the object by adding a new UserAddressUsa object to the UserAddressesUsa list
                 var newAddress = new UserAddressIndia
                 {
-                 Address1 = Request.Query["f2address1"],
-                 Address2 = Request.Query["f2address2"],
-                 District = Request.Query["district"],
-                 City = Request.Query["f2city"],
-                 Landmark = Request.Query["f2landmark"],
-                 Pincode = Request.Query["f2pincode"],
-                State = Request.Query["state"],
-                Name = name2,
+                    Address1 = Request.Query["f2address1"],
+                    Address2 = Request.Query["f2address2"],
+                    District = Request.Query["district"],
+                    City = Request.Query["f2city"],
+                    Landmark = Request.Query["f2landmark"],
+                    Pincode = Request.Query["f2pincode"],
+                    State = Request.Query["state"],
+                    Name = name2,
                 };
                 userAddresses.UserAddressesIndia.Add(newAddress);
             }
             else if (name3.Count != 0)
             {
-                var address1 = Request.Query["f3address1"];
-                var address2 = Request.Query["f3address2"];
-                var province = Request.Query["f3province"];
-                var city = Request.Query["f3city"];
-                var pincode = Request.Query["f3postcode"];
 
                 var newAddress = new UserAddressAustralia
                 {
-                    Address1 = Request.Query["f2address1"],
-                    Address2 = Request.Query["f2address2"],
-                    Province = Request.Query["f2province"],
-                    City = Request.Query["f2city"],
+                    Address1 = Request.Query["f3address1"],
+                    Address2 = Request.Query["f3address2"],
+                    Province = Request.Query["f3province"],
+                    City = Request.Query["f3city"],
                     Postcode = Request.Query["f3postcode"],
                     Name = name3,
                 };
@@ -111,36 +103,22 @@ namespace AddressFinderWebApplication.Pages
             }
             else if (name4.Count != 0)
             {
-                var address1 = Request.Query["f4address1"];
-                var streettypeandname = Request.Query["f4stsn"];
-                var province = Request.Query["f4hno"];
-                var city = Request.Query["f4nqs"];
-                var zipcode = Request.Query["f4muncipality"];
-                var landmark = Request.Query["f4postalcode"];
-                var pincode = Request.Query["f4city"];
-                var state = Request.Query["f4state"];
 
                 var newAddress = new UserAddressMexico
-                {                    
-                 StreetTypeAndName = Request.Query["f4stsn"],
-                 HouseNumber = Request.Query["f4hno"],
-                 NeighborhoodQuarterSettlement = Request.Query["f4nqs"],
-                 Municipality = Request.Query["f4muncipality"],
-                 PostalCode = Request.Query["f4postalcode"],
-                 City = Request.Query["f4city"],
-                 State = Request.Query["f4state"],
-                 Name = name4,
-            };
+                {
+                    StreetTypeAndName = Request.Query["f4stsn"],
+                    HouseNumber = Request.Query["f4hno"],
+                    NeighborhoodQuarterSettlement = Request.Query["f4nqs"],
+                    Municipality = Request.Query["f4muncipality"],
+                    PostalCode = Request.Query["f4postalcode"],
+                    City = Request.Query["f4city"],
+                    State = Request.Query["state"],
+                    Name = name4,
+                };
                 userAddresses.UserAddressesMexico.Add(newAddress);
             }
             else if (name5.Count != 0)
             {
-                var address1 = Request.Query["f5address1"];
-                var address2 = Request.Query["f5address2"];
-                var province = Request.Query["f5province"];
-                var city = Request.Query["f5city"];
-                var zipcode = Request.Query["f5postalcode"];
-
                 var newAddress = new UserAddressCanada
                 {
                     AddressLine1 = Request.Query["f5address1"],
@@ -153,13 +131,129 @@ namespace AddressFinderWebApplication.Pages
                 userAddresses.UserAddressesCanada.Add(newAddress);
             }
             string json = JsonConvert.SerializeObject(userAddresses, Formatting.Indented);
-            System.IO.File.WriteAllText(@"C:\Users\archa\source\repos\Software-Architecture-Team03\AddressFinderWebApplication\AddressFinderWebApplication\data.json", json);
-
+            System.IO.File.WriteAllText(path, json);
         }
 
-        public void OnPost()
+        public void SearchKeyword(UserAddresses userAddresses, string keyword)
+        {
+            if (keyword != null)
             {
+                foreach (var address in userAddresses.UserAddressesCanada)
+                {
+                    if (address.Name.Contains(keyword) || address.AddressLine1.Contains(keyword) || address.AddressLine2.Contains(keyword)
+                        || address.Province.Contains(keyword) || address.City.Contains(keyword) || address.PostalCode.Contains(keyword)
+                        || address.Country.Contains(keyword))
+                    {
+                        Console.WriteLine($"Address found in Canada: {address.Name}, {address.AddressLine1}, {address.City}, {address.Province}, {address.PostalCode}, {address.Country}");
+                        var newAddress = new UserAddressCanada
+                        {
+                            Name = address.Name,
+                            AddressLine1 = address.AddressLine1,
+                            Province = address.Province,
+                            City = address.City,
+                            PostalCode = address.PostalCode,
+                            Country = address.Country,
 
+                        };
+                        results.UserAddressesCanada.Add(newAddress);
+                    }
+                }
+
+                foreach (var address in userAddresses.UserAddressesMexico)
+                {
+                    if (address.Name.Contains(keyword) || address.StreetTypeAndName.Contains(keyword) || address.HouseNumber.Contains(keyword)
+                        || address.NeighborhoodQuarterSettlement.Contains(keyword) || address.Municipality.Contains(keyword) || address.PostalCode.Contains(keyword)
+                        || address.City.Contains(keyword) || address.State.Contains(keyword) || address.Country.Contains(keyword))
+                    {
+                        Console.WriteLine($"Address found in Mexico: {address.Name}, {address.StreetTypeAndName}, {address.HouseNumber}, {address.NeighborhoodQuarterSettlement}, {address.Municipality}, {address.PostalCode}, {address.City}, {address.State}, {address.Country}");
+
+                        var newaddress = new UserAddressMexico
+                        {
+                            Name = address.Name,
+                            StreetTypeAndName = address.StreetTypeAndName,
+                            HouseNumber = address.HouseNumber,
+                            City = address.City,
+                            State = address.State,
+                            Country = address.Country,
+                            Municipality = address.Municipality,
+                            NeighborhoodQuarterSettlement = address.NeighborhoodQuarterSettlement,
+                            PostalCode = address.PostalCode,
+                        };
+                        results.UserAddressesMexico.Add(newaddress);
+                    }
+                }
+
+                foreach (var address in userAddresses.UserAddressesAustralia)
+                {
+                    if (address.Name.Contains(keyword) || address.Address1.Contains(keyword) || address.Address2.Contains(keyword)
+                        || address.Province.Contains(keyword) || address.City.Contains(keyword) || address.Postcode.Contains(keyword)
+                        || address.Country.Contains(keyword))
+                    {
+                        Console.WriteLine($"Address found in Australia: {address.Name}, {address.Address1}, {address.Address2}, {address.City}, {address.Province}, {address.Postcode}, {address.Country}");
+
+                        var newaddress = new UserAddressAustralia
+                        {
+                            Address1 = address.Address1,
+                            Address2 = address.Address2,
+                            City = address.City,
+                            Country = address.Country,
+                            Name = address.Name,
+                            Postcode = address.Postcode,
+                            Province = address.Province,
+                        };
+                        results.UserAddressesAustralia.Add(newaddress);
+                    }
+                }
+
+                foreach (var address in userAddresses.UserAddressesIndia)
+                {
+                    if (address.Name.Contains(keyword) || address.Address1.Contains(keyword) || address.Address2.Contains(keyword)
+                        || address.Landmark.Contains(keyword) || address.City.Contains(keyword) || address.District.Contains(keyword)
+                        || address.Pincode.Contains(keyword) || address.State.Contains(keyword) || address.Country.Contains(keyword))
+                    {
+                        Console.WriteLine($"Address found in India: {address.Name}, {address.Address1}, {address.Address2}, {address.Landmark}, {address.City}, {address.District}, {address.Pincode}, {address.State}, {address.Country}");
+                        var newaddress = new UserAddressIndia
+                        {
+                            Country = address.Country,
+                            Address1 = address.Address1,
+                            Address2 = address.Address2,
+                            City = address.City,
+                            District = address.District,
+                            Pincode = address.Pincode,
+                            Landmark = address.Landmark,
+                            Name = address.Name,
+                            State = address.State,
+                        };
+                        results.UserAddressesIndia.Add(newaddress);
+                    }
+                }
+
+                foreach (var address in userAddresses.UserAddressesUsa)
+                {
+                    if (address.f1name1.Contains(keyword) || address.f1address1.Contains(keyword) || address.f1address2.Contains(keyword)
+                        || address.f1city.Contains(keyword) || address.f1zipcode.Contains(keyword) || address.State.Contains(keyword)
+                        || address.f1country.Contains(keyword))
+                    {
+                        Console.WriteLine($"Address found in USA: {address.f1name1}, {address.f1address1}, {address.f1address2}, {address.f1city}, {address.State}, {address.f1zipcode}, {address.f1country}");
+
+                        var newaddress = new UserAddressUsa
+                        {
+                            f1country = address.f1country,
+                            f1address1 = address.f1address1,
+                            f1address2 = address.f1address2,
+                            f1city = address.f1city,
+                            f1name1 = address.f1name1,
+                            f1zipcode = address.f1zipcode,
+                            State = address.State,
+                        };
+                        results.UserAddressesUsa.Add(newaddress);
+                    }
+                }
             }
         }
+        public void OnPost()
+        {
+            SearchKeyword(userAddresses, SearchString);
+        }
     }
+}

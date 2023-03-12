@@ -21,14 +21,87 @@
 </style>
 
 <div class="search">
-    <form method="get" class="search-form">
-        <input class="form-control valid" asp-for="SearchString" placeholder="Type here to search series" />
+    <form method="post" class="search-form">
+        <br><br>
+        <input class="form-control valid" asp-for="SearchString" placeholder="Type here to search country address" />
+        <br />
         <button type="submit">Filter</button>
+        <button type="submit" onclick="clearSearch()">Clear</button>
     </form>
-    <form method="get" class="reset-form">
-        <button type="submit">Clear</button>
-    </form>
+    <br><br>
 </div>
+
+<script>
+    function clearSearch() {
+        document.getElementById("SearchString").value = "";
+    }
+</script>
+
+<!-- Canada Addresses -->
+@if (AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesCanada.Any())
+{
+    <h2>Canada Addresses:</h2>
+    <ul>
+        @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesCanada)
+        {
+            <li>@address.Name, @address.AddressLine1, @address.City, @address.Province, @address.PostalCode, @address.Country</li>
+        }
+    </ul>
+}
+
+<!-- Mexico Addresses -->
+@if (AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesMexico.Any())
+{
+    <h2>Mexico Addresses:</h2>
+    <ul>
+        @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesMexico)
+        {
+            <li>@address.Name, @address.StreetTypeAndName, @address.HouseNumber, @address.NeighborhoodQuarterSettlement, @address.Municipality, @address.PostalCode, @address.City, @address.State, @address.Country</li>
+        }
+    </ul>
+}
+
+<!-- Australia Addresses -->
+@if (AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesAustralia.Any())
+{
+    <h2>Australia Addresses:</h2>
+    <ul>
+        @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesAustralia)
+        {
+            <li>@address.Name, @address.Address1, @address.Address2, @address.City, @address.Province, @address.Postcode, @address.Country</li>
+        }
+    </ul>
+}
+
+<!-- India Addresses -->
+@if (AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesIndia.Any())
+{
+    <h2>India Addresses:</h2>
+    <ul>
+        @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesIndia)
+        {
+            <li>@address.Name, @address.Address1, @address.Address2, @address.Landmark, @address.City, @address.District, @address.Pincode, @address.State, @address.Country</li>
+        }
+    </ul>
+}
+
+<!-- USA Addresses -->
+@if (AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesUsa.Any())
+{
+    <h2>USA Addresses:</h2>
+    <ul>
+        @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesUsa)
+        {
+            <li>@address.f1name1, @address.f1address1, @address.f1address2, @address.f1city, @address.State, @address.f1zipcode, @address.f1country</li>
+        }
+    </ul>
+}
+
+<!-- No Addresses Found -->
+@if (!AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesCanada.Any() && !AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesMexico.Any() && !AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesAustralia.Any() && !AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesIndia.Any() && !AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesUsa.Any())
+{
+    <p>No addresses found for search term "@Model.SearchString".</p>
+}
 
 
 <label for="dropdown">Select an Option:</label>

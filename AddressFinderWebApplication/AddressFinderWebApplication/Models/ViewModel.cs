@@ -67,7 +67,7 @@ namespace AddressFinderWebApplication.Models
         public string f1city { get; set; }
         public string f1zipcode { get; set; }
         public string State { get; set; }
-        public string f1country { get; } = "USA";
+        public string f1country { get; set; } = "USA";
     }
 
     public class UserAddresses
