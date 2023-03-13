@@ -38,8 +38,8 @@ namespace AddressFinderWebApplication.Models
     public class UserAddressAustralia
     {
         public string Name { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
         public string Province { get; set; }
         public string City { get; set; }
         public string Postcode { get; set; }
@@ -49,8 +49,8 @@ namespace AddressFinderWebApplication.Models
     public class UserAddressIndia
     {
         public string Name { get; set; }
-        public string Address1 { get; set; }
-        public string Address2 { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
         public string Landmark { get; set; }
         public string City { get; set; }
         public string District { get; set; }
@@ -62,8 +62,8 @@ namespace AddressFinderWebApplication.Models
     public class UserAddressUsa
     {
         public string f1name1 { get; set; }
-        public string f1address1 { get; set; }
-        public string f1address2 { get; set; }
+        public string f1AddressLine1 { get; set; }
+        public string f1AddressLine2 { get; set; }
         public string f1city { get; set; }
         public string f1zipcode { get; set; }
         public string State { get; set; }

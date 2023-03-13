@@ -62,11 +62,11 @@ namespace AddressFinderWebApplication.Pages
                 var newAddress = new UserAddressUsa
                 {
                     f1name1 = name1,
-                    f1address2 = Request.Query["f1address2"],
+                    f1AddressLine2 = Request.Query["f1AddressLine2"],
                     f1city = Request.Query["f1city"],
                     f1zipcode = Request.Query["f1zipcode"],
                     State = Request.Query["state"],
-                    f1address1 = Request.Query["f1address1"],
+                    f1AddressLine1 = Request.Query["f1AddressLine1"],
                 };
                 userAddresses.UserAddressesUsa.Add(newAddress);
             }
@@ -76,8 +76,8 @@ namespace AddressFinderWebApplication.Pages
                 // Modify the object by adding a new UserAddressUsa object to the UserAddressesUsa list
                 var newAddress = new UserAddressIndia
                 {
-                    Address1 = Request.Query["f2address1"],
-                    Address2 = Request.Query["f2address2"],
+                    AddressLine1 = Request.Query["f2AddressLine1"],
+                    AddressLine2 = Request.Query["f2AddressLine2"],
                     District = Request.Query["district"],
                     City = Request.Query["f2city"],
                     Landmark = Request.Query["f2landmark"],
@@ -92,8 +92,8 @@ namespace AddressFinderWebApplication.Pages
 
                 var newAddress = new UserAddressAustralia
                 {
-                    Address1 = Request.Query["f3address1"],
-                    Address2 = Request.Query["f3address2"],
+                    AddressLine1 = Request.Query["f3AddressLine1"],
+                    AddressLine2 = Request.Query["f3AddressLine2"],
                     Province = Request.Query["f3province"],
                     City = Request.Query["f3city"],
                     Postcode = Request.Query["f3postcode"],
@@ -121,8 +121,8 @@ namespace AddressFinderWebApplication.Pages
             {
                 var newAddress = new UserAddressCanada
                 {
-                    AddressLine1 = Request.Query["f5address1"],
-                    AddressLine2 = Request.Query["f5address2"],
+                    AddressLine1 = Request.Query["f5AddressLine1"],
+                    AddressLine2 = Request.Query["f5AddressLine2"],
                     Province = Request.Query["f5province"],
                     City = Request.Query["f5city"],
                     PostalCode = Request.Query["f5postalcode"],
@@ -187,16 +187,16 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesAustralia)
                 {
-                    if (address.Name.ToLower().Contains(keyword) || address.Address1.ToLower().Contains(keyword) || address.Address2.ToLower().Contains(keyword)
+                    if (address.Name.ToLower().Contains(keyword) || address.AddressLine1.ToLower().Contains(keyword) || address.AddressLine2.ToLower().Contains(keyword)
                         || address.Province.ToLower().Contains(keyword) || address.City.ToLower().Contains(keyword) || address.Postcode.ToLower().Contains(keyword)
                         || address.Country.ToLower().Contains(keyword))
                     {
-                        Console.WriteLine($"Address found in Australia: {address.Name}, {address.Address1}, {address.Address2}, {address.City}, {address.Province}, {address.Postcode}, {address.Country}");
+                        Console.WriteLine($"Address found in Australia: {address.Name}, {address.AddressLine1}, {address.AddressLine2}, {address.City}, {address.Province}, {address.Postcode}, {address.Country}");
 
                         var newaddress = new UserAddressAustralia
                         {
-                            Address1 = address.Address1,
-                            Address2 = address.Address2,
+                            AddressLine1 = address.AddressLine1,
+                            AddressLine2 = address.AddressLine2,
                             City = address.City,
                             Country = address.Country,
                             Name = address.Name,
@@ -209,16 +209,16 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesIndia)
                 {
-                    if (address.Name.ToLower().Contains(keyword) || address.Address1.ToLower().Contains(keyword) || address.Address2.ToLower().Contains(keyword)
+                    if (address.Name.ToLower().Contains(keyword) || address.AddressLine1.ToLower().Contains(keyword) || address.AddressLine2.ToLower().Contains(keyword)
                         || address.Landmark.ToLower().Contains(keyword) || address.City.ToLower().Contains(keyword) || address.District.ToLower().Contains(keyword)
                         || address.Pincode.ToLower().Contains(keyword) || address.State.ToLower().Contains(keyword) || address.Country.ToLower().Contains(keyword))
                     {
-                        Console.WriteLine($"Address found in India: {address.Name}, {address.Address1}, {address.Address2}, {address.Landmark}, {address.City}, {address.District}, {address.Pincode}, {address.State}, {address.Country}");
+                        Console.WriteLine($"Address found in India: {address.Name}, {address.AddressLine1}, {address.AddressLine2}, {address.Landmark}, {address.City}, {address.District}, {address.Pincode}, {address.State}, {address.Country}");
                         var newaddress = new UserAddressIndia
                         {
                             Country = address.Country,
-                            Address1 = address.Address1,
-                            Address2 = address.Address2,
+                            AddressLine1 = address.AddressLine1,
+                            AddressLine2 = address.AddressLine2,
                             City = address.City,
                             District = address.District,
                             Pincode = address.Pincode,
@@ -232,17 +232,17 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesUsa)
                 {
-                    if (address.f1name1.ToLower().Contains(keyword) || address.f1address1.ToLower().Contains(keyword) || address.f1address2.ToLower().Contains(keyword)
+                    if (address.f1name1.ToLower().Contains(keyword) || address.f1AddressLine1.ToLower().Contains(keyword) || address.f1AddressLine2.ToLower().Contains(keyword)
                         || address.f1city.ToLower().Contains(keyword) || address.f1zipcode.ToLower().Contains(keyword) || address.State.ToLower().Contains(keyword)
                         || address.f1country.ToLower().Contains(keyword))
                     {
-                        Console.WriteLine($"Address found in USA: {address.f1name1}, {address.f1address1}, {address.f1address2}, {address.f1city}, {address.State}, {address.f1zipcode}, {address.f1country}");
+                        Console.WriteLine($"Address found in USA: {address.f1name1}, {address.f1AddressLine1}, {address.f1AddressLine2}, {address.f1city}, {address.State}, {address.f1zipcode}, {address.f1country}");
 
                         var newaddress = new UserAddressUsa
                         {
                             f1country = address.f1country,
-                            f1address1 = address.f1address1,
-                            f1address2 = address.f1address2,
+                            f1AddressLine1 = address.f1AddressLine1,
+                            f1AddressLine2 = address.f1AddressLine2,
                             f1city = address.f1city,
                             f1name1 = address.f1name1,
                             f1zipcode = address.f1zipcode,

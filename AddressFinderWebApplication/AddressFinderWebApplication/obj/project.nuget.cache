@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wKcqwEWMuoOY14FebJgOTDVJC2GdjMaVxMBC2v84xmBHLg8kE9+Gte6tE6lhuc7/BKe5JrmA76KbiR9557XneQ==",
+  "success": true,
+  "projectFilePath": "D:\\DriveA\\Software-Architecture-Team03\\AddressFinderWebApplication\\AddressFinderWebApplication\\AddressFinderWebApplication.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\henis\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -44,7 +44,7 @@
     <ul>
         @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesCanada)
         {
-            <li>@address.Name, @address.AddressLine1, @address.City, @address.Province, @address.PostalCode, @address.Country</li>
+            <li>@address.Name, <br /> @address.AddressLine1, <br /> @address.City, @address.Province, @address.PostalCode, <br /> @address.Country</li>
         }
     </ul>
 }
@@ -56,7 +56,7 @@
     <ul>
         @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesMexico)
         {
-            <li>@address.Name, @address.StreetTypeAndName, @address.HouseNumber, @address.NeighborhoodQuarterSettlement, @address.Municipality, @address.PostalCode, @address.City, @address.State, @address.Country</li>
+            <li>@address.Name, <br /> @address.StreetTypeAndName, <br /> @address.HouseNumber, <br /> @address.NeighborhoodQuarterSettlement, <br /> @address.Municipality, @address.PostalCode, @address.City, <br /> @address.State, <br /> @address.Country</li>
         }
     </ul>
 }
@@ -68,7 +68,7 @@
     <ul>
         @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesAustralia)
         {
-            <li>@address.Name, @address.Address1, @address.Address2, @address.City, @address.Province, @address.Postcode, @address.Country</li>
+            <li>@address.Name, <br /> @address.AddressLine1, <br /> @address.AddressLine2, <br /> @address.City, @address.Province, @address.Postcode, <br/> @address.Country</li>
         }
     </ul>
 }
@@ -80,7 +80,7 @@
     <ul>
         @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesIndia)
         {
-            <li>@address.Name, @address.Address1, @address.Address2, @address.Landmark, @address.City, @address.District, @address.Pincode, @address.State, @address.Country</li>
+            <li>@address.Name, <br /> @address.AddressLine1, <br /> @address.AddressLine2, <br /> @address.Landmark, <br /> @address.City, <br /> @address.District, @address.Pincode, <br /> @address.State, <br /> @address.Country</li>
         }
     </ul>
 }
@@ -92,7 +92,7 @@
     <ul>
         @foreach (var address in AddressFinderWebApplication.Pages.IndexModel.results.UserAddressesUsa)
         {
-            <li>@address.f1name1, @address.f1address1, @address.f1address2, @address.f1city, @address.State, @address.f1zipcode, @address.f1country</li>
+                    <li>@address.f1name1, <br/> @address.f1AddressLine1, <br/> @address.f1AddressLine2, <br/> @address.f1city, <br/> @address.State, @address.f1zipcode, <br/> @address.f1country</li>
         }
     </ul>
 }
@@ -128,10 +128,10 @@
                               <br><br>
                                   <label for="f1name1"><strong>Name:</strong></label>
                                   <input type="text" id="f1name1" name="f1name1"><br><br>
-                                  <label for="address1"><strong>Address Line 1:</strong></label>
-                              <input type="text" id="f1address1" name="f1address1"><br><br>
-                                  <label for="address2"><strong>Address Line 2:</strong></label>
-                              <input type="text" id="f1address2" name="f1address2"><br><br>
+                                  <label for="AddressLine1"><strong>Address Line 1:</strong></label>
+                              <input type="text" id="f1AddressLine1" name="f1AddressLine1"><br><br>
+                                  <label for="AddressLine2"><strong>Address Line 2:</strong></label>
+                              <input type="text" id="f1AddressLine2" name="f1AddressLine2"><br><br>
                                   <label for="city"><strong>City:</strong></label>
                               <input type="text" id="f1city" name="f1city"><br><br>
                                   <label for="zipcode"><strong>ZIP Code:</strong></label>
@@ -151,10 +151,10 @@
                                   <br><br>
                                       <label for="f2name1"><strong>Name:</strong></label>
                                   <input type="text" id="f2name1" name="f2name1"><br><br>
-                                      <label for="address1"><strong>Address Line 1:</strong></label>
-                                  <input type="text" id="f2address1" name="f2address1"><br><br>
-                                      <label for="address2"><strong>Address Line 2:</strong></label>
-                                  <input type="text" id="f2address2" name="f2address2"><br><br>
+                                      <label for="AddressLine1"><strong>Address Line 1:</strong></label>
+                                  <input type="text" id="f2AddressLine1" name="f2AddressLine1"><br><br>
+                                      <label for="AddressLine2"><strong>Address Line 2:</strong></label>
+                                  <input type="text" id="f2AddressLine2" name="f2AddressLine2"><br><br>
                                       <label for="landmark"><strong>Landmark:</strong></label>
                                   <input type="text" id="f2landmark" name="f2landmark"><br><br>
                                       <label for="district"><strong>District:</strong></label>
@@ -177,10 +177,10 @@
                                       <br><br>
                                           <label for="name1"><strong>Name:</strong></label>
                                       <input type="text" id="f3name1" name="f3name1"><br><br>
-                                          <label for="address1"><strong>Address Line 1:</strong></label>
-                                      <input type="text" id="f3address1" name="f3address1"><br><br>
-                                          <label for="address2"><strong>Address Line 2:</strong></label>
-                                      <input type="text" id="f3address2" name="f3address2"><br><br>
+                                          <label for="AddressLine1"><strong>Address Line 1:</strong></label>
+                                      <input type="text" id="f3AddressLine1" name="f3AddressLine1"><br><br>
+                                          <label for="AddressLine2"><strong>Address Line 2:</strong></label>
+                                      <input type="text" id="f3AddressLine2" name="f3AddressLine2"><br><br>
                                           <label for="province"><strong>Province:</strong></label>
                                       <input type="text" id="f3province" name="f3province"><br><br>
                                           <label for="city"><strong>City:</strong></label>
@@ -225,10 +225,10 @@
                           <br><br>
                               <label for="name1"><strong>Name:</strong></label>
                           <input type="text" id="f5name1" name="f5name1"><br><br>
-                              <label for="address1"><strong>Address Line 1:</strong></label>
-                          <input type="text" id="f5address1" name="f5address1"><br><br>
-                              <label for="address2"><strong>Address Line 2:</strong></label>
-                          <input type="text" id="f5address2" name="f5address2"><br><br>
+                              <label for="AddressLine1"><strong>Address Line 1:</strong></label>
+                          <input type="text" id="f5AddressLine1" name="f5AddressLine1"><br><br>
+                              <label for="AddressLine2"><strong>Address Line 2:</strong></label>
+                          <input type="text" id="f5AddressLine2" name="f5AddressLine2"><br><br>
                               <label for="province"><strong>Province:</strong></label>
                           <input type="text" id="f5province" name="f5province"><br><br>
                               <label for="city"><strong>City:</strong></label>
