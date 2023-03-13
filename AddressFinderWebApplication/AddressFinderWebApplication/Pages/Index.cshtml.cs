@@ -136,13 +136,15 @@ namespace AddressFinderWebApplication.Pages
 
         public void SearchKeyword(UserAddresses userAddresses, string keyword)
         {
-            if (keyword != null)
+            if (!string.IsNullOrEmpty(keyword))
             {
+                keyword = keyword.ToLower();
+
                 foreach (var address in userAddresses.UserAddressesCanada)
                 {
-                    if (address.Name.Contains(keyword) || address.AddressLine1.Contains(keyword) || address.AddressLine2.Contains(keyword)
-                        || address.Province.Contains(keyword) || address.City.Contains(keyword) || address.PostalCode.Contains(keyword)
-                        || address.Country.Contains(keyword))
+                    if (address.Name.ToLower().Contains(keyword) || address.AddressLine1.ToLower().Contains(keyword) || address.AddressLine2.ToLower().Contains(keyword)
+                        || address.Province.ToLower().Contains(keyword) || address.City.ToLower().Contains(keyword) || address.PostalCode.ToLower().Contains(keyword)
+                        || address.Country.ToLower().Contains(keyword))
                     {
                         Console.WriteLine($"Address found in Canada: {address.Name}, {address.AddressLine1}, {address.City}, {address.Province}, {address.PostalCode}, {address.Country}");
                         var newAddress = new UserAddressCanada
@@ -161,9 +163,9 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesMexico)
                 {
-                    if (address.Name.Contains(keyword) || address.StreetTypeAndName.Contains(keyword) || address.HouseNumber.Contains(keyword)
-                        || address.NeighborhoodQuarterSettlement.Contains(keyword) || address.Municipality.Contains(keyword) || address.PostalCode.Contains(keyword)
-                        || address.City.Contains(keyword) || address.State.Contains(keyword) || address.Country.Contains(keyword))
+                    if (address.Name.ToLower().Contains(keyword) || address.StreetTypeAndName.ToLower().Contains(keyword) || address.HouseNumber.ToLower().Contains(keyword)
+                        || address.NeighborhoodQuarterSettlement.ToLower().Contains(keyword) || address.Municipality.ToLower().Contains(keyword) || address.PostalCode.ToLower().Contains(keyword)
+                        || address.City.ToLower().Contains(keyword) || address.State.ToLower().Contains(keyword) || address.Country.ToLower().Contains(keyword))
                     {
                         Console.WriteLine($"Address found in Mexico: {address.Name}, {address.StreetTypeAndName}, {address.HouseNumber}, {address.NeighborhoodQuarterSettlement}, {address.Municipality}, {address.PostalCode}, {address.City}, {address.State}, {address.Country}");
 
@@ -185,9 +187,9 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesAustralia)
                 {
-                    if (address.Name.Contains(keyword) || address.Address1.Contains(keyword) || address.Address2.Contains(keyword)
-                        || address.Province.Contains(keyword) || address.City.Contains(keyword) || address.Postcode.Contains(keyword)
-                        || address.Country.Contains(keyword))
+                    if (address.Name.ToLower().Contains(keyword) || address.Address1.ToLower().Contains(keyword) || address.Address2.ToLower().Contains(keyword)
+                        || address.Province.ToLower().Contains(keyword) || address.City.ToLower().Contains(keyword) || address.Postcode.ToLower().Contains(keyword)
+                        || address.Country.ToLower().Contains(keyword))
                     {
                         Console.WriteLine($"Address found in Australia: {address.Name}, {address.Address1}, {address.Address2}, {address.City}, {address.Province}, {address.Postcode}, {address.Country}");
 
@@ -207,9 +209,9 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesIndia)
                 {
-                    if (address.Name.Contains(keyword) || address.Address1.Contains(keyword) || address.Address2.Contains(keyword)
-                        || address.Landmark.Contains(keyword) || address.City.Contains(keyword) || address.District.Contains(keyword)
-                        || address.Pincode.Contains(keyword) || address.State.Contains(keyword) || address.Country.Contains(keyword))
+                    if (address.Name.ToLower().Contains(keyword) || address.Address1.ToLower().Contains(keyword) || address.Address2.ToLower().Contains(keyword)
+                        || address.Landmark.ToLower().Contains(keyword) || address.City.ToLower().Contains(keyword) || address.District.ToLower().Contains(keyword)
+                        || address.Pincode.ToLower().Contains(keyword) || address.State.ToLower().Contains(keyword) || address.Country.ToLower().Contains(keyword))
                     {
                         Console.WriteLine($"Address found in India: {address.Name}, {address.Address1}, {address.Address2}, {address.Landmark}, {address.City}, {address.District}, {address.Pincode}, {address.State}, {address.Country}");
                         var newaddress = new UserAddressIndia
@@ -230,9 +232,9 @@ namespace AddressFinderWebApplication.Pages
 
                 foreach (var address in userAddresses.UserAddressesUsa)
                 {
-                    if (address.f1name1.Contains(keyword) || address.f1address1.Contains(keyword) || address.f1address2.Contains(keyword)
-                        || address.f1city.Contains(keyword) || address.f1zipcode.Contains(keyword) || address.State.Contains(keyword)
-                        || address.f1country.Contains(keyword))
+                    if (address.f1name1.ToLower().Contains(keyword) || address.f1address1.ToLower().Contains(keyword) || address.f1address2.ToLower().Contains(keyword)
+                        || address.f1city.ToLower().Contains(keyword) || address.f1zipcode.ToLower().Contains(keyword) || address.State.ToLower().Contains(keyword)
+                        || address.f1country.ToLower().Contains(keyword))
                     {
                         Console.WriteLine($"Address found in USA: {address.f1name1}, {address.f1address1}, {address.f1address2}, {address.f1city}, {address.State}, {address.f1zipcode}, {address.f1country}");
 

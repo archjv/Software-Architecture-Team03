@@ -6,7 +6,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">ADDRESS FINDER</h1>
+    <h1 class="display-4"><strong>ADDRESS FINDER</strong></h1>
     @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
 </div>
 
@@ -22,13 +22,13 @@
 
 <div class="search">
     <form method="post" class="search-form">
-        <br><br>
+        
         <input class="form-control valid" asp-for="SearchString" placeholder="Type here to search country address" />
         <br />
-        <button type="submit">Filter</button>
-        <button type="submit" onclick="clearSearch()">Clear</button>
+        <button type="submit"><strong>Filter</strong></button>
+        <button type="submit" onclick="clearSearch()"><strong>Clear</strong></button>
     </form>
-    <br><br>
+    <br>
 </div>
 
 <script>
@@ -104,7 +104,7 @@
 }
 
 
-<label for="dropdown">Select an Option:</label>
+<label for="dropdown"><strong>Select an Option:</strong></label>
 <select id="myDropdown">
     <option value="form">Select Country</option>
     <option value="form1">USA</option>
@@ -126,19 +126,19 @@
             formContainer.innerHTML = `
                             <form method="get">
                               <br><br>
-                              <label for="f1name1">Name:</label>
+                                  <label for="f1name1"><strong>Name:</strong></label>
                                   <input type="text" id="f1name1" name="f1name1"><br><br>
-                              <label for="address1">Address Line 1:</label>
+                                  <label for="address1"><strong>Address Line 1:</strong></label>
                               <input type="text" id="f1address1" name="f1address1"><br><br>
-                              <label for="address2">Address Line 2:</label>
+                                  <label for="address2"><strong>Address Line 2:</strong></label>
                               <input type="text" id="f1address2" name="f1address2"><br><br>
-                              <label for="city">City:</label>
+                                  <label for="city"><strong>City:</strong></label>
                               <input type="text" id="f1city" name="f1city"><br><br>
-                              <label for="zipcode">ZIP Code:</label>
+                                  <label for="zipcode"><strong>ZIP Code:</strong></label>
                               <input type="text" id="f1zipcode" name="f1zipcode"><br><br>
-                              <label for="state">State:</label>
+                                  <label for="state"><strong>State:</strong></label>
                               <input type="text" id="state" name="state"><br><br>
-                              <label for="country">Country:</label>
+                                  <label for="country"><strong>Country:</strong></label>
                               <input type="text" id="f1country" value="USA" disabled name="f1country"><br><br>
                               <input type="submit" value="Submit">
                             </form>
@@ -149,23 +149,23 @@
             formContainer.innerHTML = `
                                     <form id="myform2" method="get">
                                   <br><br>
-                                  <label for="f2name1">Name:</label>
+                                      <label for="f2name1"><strong>Name:</strong></label>
                                   <input type="text" id="f2name1" name="f2name1"><br><br>
-                                  <label for="address1">Address Line 1:</label>
+                                      <label for="address1"><strong>Address Line 1:</strong></label>
                                   <input type="text" id="f2address1" name="f2address1"><br><br>
-                                  <label for="address2">Address Line 2:</label>
+                                      <label for="address2"><strong>Address Line 2:</strong></label>
                                   <input type="text" id="f2address2" name="f2address2"><br><br>
-                                  <label for="landmark">Landmark:</label>
+                                      <label for="landmark"><strong>Landmark:</strong></label>
                                   <input type="text" id="f2landmark" name="f2landmark"><br><br>
-                                  <label for="district">District:</label>
+                                      <label for="district"><strong>District:</strong></label>
                                       <input type="text" id="district" name="district"><br><br>
-                                  <label for="city">City:</label>
+                                      <label for="city"><strong>City:</strong></label>
                                   <input type="text" id="f2city" name="f2city"><br><br>
-                                  <label for="pincode">Pin Code:</label>
+                                      <label for="pincode"><strong>Pin Code:</strong></label>
                                   <input type="text" id="f2pincode" name="f2pincode"><br><br>
-                                  <label for="state">State:</label>
+                                      <label for="state"><strong>State:</strong></label>
                                   <input type="text" id="state" name="state"><br><br>
-                                  <label for="country">Country:</label>
+                                      <label for="country"><strong>Country:</strong></label>
                                   <input type="text" id="f1country" value="INDIA" disabled name="f2country"><br><br>
                                   <input type="submit" value="Submit">
                                 </form>
@@ -175,19 +175,19 @@
             formContainer.innerHTML = `
                                         <form id="myform3" method="get">
                                       <br><br>
-                                      <label for="name1">Name:</label>
+                                          <label for="name1"><strong>Name:</strong></label>
                                       <input type="text" id="f3name1" name="f3name1"><br><br>
-                                      <label for="address1">Address Line 1:</label>
+                                          <label for="address1"><strong>Address Line 1:</strong></label>
                                       <input type="text" id="f3address1" name="f3address1"><br><br>
-                                      <label for="address2">Address Line 2:</label>
+                                          <label for="address2"><strong>Address Line 2:</strong></label>
                                       <input type="text" id="f3address2" name="f3address2"><br><br>
-                                      <label for="province">Province:</label>
+                                          <label for="province"><strong>Province:</strong></label>
                                       <input type="text" id="f3province" name="f3province"><br><br>
-                                      <label for="city">City:</label>
+                                          <label for="city"><strong>City:</strong></label>
                                       <input type="text" id="f3city" name="f3city"><br><br>
-                                      <label for="postcode">Post Code:</label>
+                                          <label for="postcode"><strong>Post Code:</strong></label>
                                       <input type="text" id="f3postcode" name="f3postcode"><br><br>
-                                  <label for="country">Country:</label>
+                                      <label for="country"><strong>Country:</strong></label>
                                   <input type="text" id="f1country" value="AUSTRALIA" disabled name="f3country"><br><br>
                                       <input type="submit" value="Submit">
                                     </form>
@@ -197,23 +197,23 @@
             formContainer.innerHTML = `
                             <form id="myform4" method="get">
                           <br><br>
-                          <label for="name1">Name:</label>
+                              <label for="name1"><strong>Name:</strong></label>
                           <input type="text" id="f4name1" name="f4name1"><br><br>
-                          <label for="stsn">Street Type and Street Name:</label>
+                              <label for="stsn"><strong>Street Type and Street Name:</strong></label>
                           <input type="text" id="f4stsn" name="f4stsn"><br><br>
-                          <label for="hno">House No:</label>
+                              <label for="hno"><strong>House No:</strong></label>
                           <input type="text" id="f4hno" name="f4hno"><br><br>
-                          <label for="nqs">Neighborhood , Quarter, or Settlement:</label>
+                                  <label for="nqs"><strong> Neighborhood,Quarter or Settlement:</strong></label>
                           <input type="text" id="f4nqs" name="f4nqs"><br><br>
-                          <label for="muncipality">Muncipality:</label>
+                              <label for="muncipality"><strong>Muncipality:</strong></label>
                           <input type="text" id="f4muncipality" name="f4muncipality"><br><br>
-                          <label for="postalcode">Postal Code:</label>
+                              <label for="postalcode"><strong>Postal Code:</strong></label>
                           <input type="text" id="f4postalcode" name="f4postalcode"><br><br>
-                          <label for="city">City:</label>
+                              <label for="city"><strong>City:</strong></label>
                           <input type="text" id="f4city" name="f4city"><br><br>
-                          <label for="state">State:</label>
+                              <label for="state"><strong>State:</strong></label>
                           <input type="text" id="state" name="state"><br><br>
-                                  <label for="country">Country:</label>
+                                      <label for="country"><strong>Country:</strong></label>
                                   <input type="text" id="f1country" value="MEXICO" disabled name="f4country"><br><br>
                           <input type="submit" value="Submit">
                         </form>
@@ -223,19 +223,19 @@
             formContainer.innerHTML = `
                             <form id="myform5" method="get">
                           <br><br>
-                          <label for="name1">Name:</label>
+                              <label for="name1"><strong>Name:</strong></label>
                           <input type="text" id="f5name1" name="f5name1"><br><br>
-                          <label for="address1">Address Line 1:</label>
+                              <label for="address1"><strong>Address Line 1:</strong></label>
                           <input type="text" id="f5address1" name="f5address1"><br><br>
-                          <label for="address2">Address Line 2:</label>
+                              <label for="address2"><strong>Address Line 2:</strong></label>
                           <input type="text" id="f5address2" name="f5address2"><br><br>
-                          <label for="province">Province:</label>
+                              <label for="province"><strong>Province:</strong></label>
                           <input type="text" id="f5province" name="f5province"><br><br>
-                          <label for="city">City:</label>
+                              <label for="city"><strong>City:</strong></label>
                           <input type="text" id="f5city" name="f5city"><br><br>
-                          <label for="postalcode">Postal Code:</label>
+                              <label for="postalcode"><strong>Postal Code:</strong></label>
                           <input type="text" id="f5postalcode" name="f5postalcode"><br><br>
-                                  <label for="country">Country:</label>
+                                      <label for="country"><strong>Country:</strong></label>
                                   <input type="text" id="f1country" value="CANADA" disabled name="f5country"><br><br>
                           <input type="submit" value="Submit">
                         </form>
